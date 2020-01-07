@@ -37,16 +37,17 @@
       <div class="products">
         <div class="cl">&nbsp;</div>
         <ul>
-          <li> <a href="#"><img src="{{ asset('images/big1.jpg') }}" alt="" /></a>
+          @foreach($products as $product)
+          <li> <a href="#"><img src="{{ asset('images/'. $product->image) }}" alt="" /></a>
             <div class="product-info">
-              <h3>LOREM IPSUM</h3>
+              <h3>{{$product->name}}</h3>
               <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
+                <h4>{{$product->set}}</h4>
+                <p>{{$product->description}}</p>
+                <strong class="price">€{{$product->price}}</strong> </div>
             </div>
           </li>
+          @endforeach
           <li> <a href="#"><img src="{{ asset('images/big1.jpg') }}" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
@@ -54,7 +55,7 @@
                 <h4>WOMEN’S</h4>
                 <p>Lorem ipsum dolor sit<br />
                   amet</p>
-                <strong class="price">$58.99</strong> </div>
+                <strong class="price">€58.99</strong> </div>
             </div>
           </li>
           <li class="last"> <a href="#"><img src="{{ asset('images/big1.jpg') }}" alt="" /></a>
@@ -64,7 +65,7 @@
                 <h4>WOMEN’S</h4>
                 <p>Lorem ipsum dolor sit<br />
                   amet</p>
-                <strong class="price">$58.99</strong> </div>
+                <strong class="price">€58.99</strong> </div>
             </div>
           </li>
         </ul>
@@ -80,16 +81,16 @@
         <h2>Categories <span></span></h2>
         <div class="box-content">
           <ul>
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
-            <li><a href="#">Category 4</a></li>
-            <li><a href="#">Category 5</a></li>
-            <li><a href="#">Category 6</a></li>
-            <li><a href="#">Category 7</a></li>
-            <li><a href="#">Category 8</a></li>
-            <li><a href="#">Category 9</a></li>
-            <li class="last"><a href="#">Category 10</a></li>
+            <li><a href="#">Pokémon</a></li>
+            <li><a href="#">Yu-Gi-Oh!</a></li>
+            <li><a href="#">Magic the Gathering</a></li>
+            <li><a href="#">My Little Pony</a></li>
+            <li><a href="#">Star Wars</a></li>
+            <li><a href="#">Digimon</a></li>
+            <li><a href="#">Dragon Ball Z</a></li>
+            <li><a href="#">Harry Potter</a></li>
+            <li><a href="#">Beyblade</a></li>
+            <li class="last"><a href="#">Adventure Time Card Wars</a></li>
           </ul>
         </div>
       </div>

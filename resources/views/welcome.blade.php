@@ -6,20 +6,24 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Trading Card Shop
-                </div>
+                    Trading Cardshop Ian
+                </div><br>
+
+                <h1>
+                    <a href="">Start Shopping -></a>
+                </h1><br>
 
                 <div class="links">
                     <a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon">Pokémon</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a><br>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                    <a href="https://github.com/laravel/laravel">GitHGitHubGitHubub</a>
+                    <a href="https://en.wikipedia.org/wiki/Yu-Gi-Oh!">Yu-Gi-Oh!</a>
+                    <a href="https://en.wikipedia.org/wiki/Magic:_The_Gathering">Magic the Gathering</a>
+                    <a href="https://en.wikipedia.org/wiki/My_Little_Pony_Collectible_Card_Game">My Little Pony</a>
+                    <a href="https://en.wikipedia.org/wiki/Star_Wars:_The_Card_Game">Star Wars</a><br>
+                    <a href="https://en.wikipedia.org/wiki/Digimon_Digital_Card_Battle">Digimon</a>
+                    <a href="https://en.wikipedia.org/wiki/Dragon_Ball_Z_Collectible_Card_Game">Dragon Ball Z</a>
+                    <a href="https://en.wikipedia.org/wiki/Harry_Potter_Trading_Card_Game">Harry Potter</a>
+                    <a href="https://en.wikipedia.org/wiki/Beyblade_Trading_Card_Game">Beyblade</a>
+                    <a href="https://en.wikipedia.org/wiki/Card_Wars">Adventure Time Card Wars</a>
                 </div>
             </div>
         </div>
