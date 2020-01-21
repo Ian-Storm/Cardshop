@@ -36,7 +36,7 @@ class CategorySeeder extends Seeder
     ]);
 
     	DB::table('categories')->insert([
-    		'name' => "Dragon Ball Z",
+    		'name' => "Dragon Ball Super",
     ]);
 
     	DB::table('categories')->insert([

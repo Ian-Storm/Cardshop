@@ -10,7 +10,7 @@
                 </div><br>
 
                 <h1>
-                    <a href="">Start Shopping -></a>
+                    <a href="{{ route('products') }}">Start Shopping -></a>
                 </h1><br>
 
                 <div class="links">
@@ -20,7 +20,7 @@
                     <a href="https://en.wikipedia.org/wiki/My_Little_Pony_Collectible_Card_Game">My Little Pony</a>
                     <a href="https://en.wikipedia.org/wiki/Star_Wars:_The_Card_Game">Star Wars</a><br>
                     <a href="https://en.wikipedia.org/wiki/Digimon_Digital_Card_Battle">Digimon</a>
-                    <a href="https://en.wikipedia.org/wiki/Dragon_Ball_Z_Collectible_Card_Game">Dragon Ball Z</a>
+                    <a href="https://dragonball.fandom.com/wiki/Dragon_Ball_Super_Card_Game_(2017)">Dragon Ball Super</a>
                     <a href="https://en.wikipedia.org/wiki/Harry_Potter_Trading_Card_Game">Harry Potter</a>
                     <a href="https://en.wikipedia.org/wiki/Beyblade_Trading_Card_Game">Beyblade</a>
                     <a href="https://en.wikipedia.org/wiki/Card_Wars">Adventure Time Card Wars</a>
