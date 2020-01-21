@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/product', 'ProductController@index')->name('products');
+Route::get('/product/{id}', 'ProductController@index')->name('products');
+//{id} niet verplicht

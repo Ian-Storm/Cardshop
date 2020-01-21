@@ -81,16 +81,9 @@
         <h2>Categories <span></span></h2>
         <div class="box-content">
           <ul>
-            <li><a href="#">Pokémon</a></li>
-            <li><a href="#">Yu-Gi-Oh!</a></li>
-            <li><a href="#">Magic the Gathering</a></li>
-            <li><a href="#">My Little Pony</a></li>
-            <li><a href="#">Star Wars</a></li>
-            <li><a href="#">Digimon</a></li>
-            <li><a href="#">Dragon Ball Z</a></li>
-            <li><a href="#">Harry Potter</a></li>
-            <li><a href="#">Beyblade</a></li>
-            <li class="last"><a href="#">Adventure Time Card Wars</a></li>
+          @foreach($categories as $category)
+            <li @if($loop->last) class="last" @endif><a href="#">{{$category->name}}</a></li>
+          @endforeach
           </ul>
         </div>
       </div>
