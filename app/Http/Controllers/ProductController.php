@@ -23,10 +23,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($id = 1)
+    public function index()
     {
     	$categories = Category::all();
     	$products = Product::all();//niet meer ::all() maar where(category_id, $id)->get()
         return view('products', ['categories' => $categories, 'products' => $products]);
+    }
+
+    public function view($id)
+    {
+        $product = Product::find($id);
+        return view('product', compact('product'));
     }
 }

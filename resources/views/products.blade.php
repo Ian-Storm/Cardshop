@@ -38,7 +38,7 @@
         <div class="cl">&nbsp;</div>
         <ul>
           @foreach($products as $product)
-          <li> <a href="#"><img src="{{ asset('images/'. $product->image) }}" alt="" /></a>
+          <li> <a href="{{route('productview', $product->id)}}"><img src="{{ asset('images/'. $product->image) }}" alt="" />
             <div class="product-info">
               <h3>{{$product->name}}</h3>
               <div class="product-desc">
@@ -46,28 +46,9 @@
                 <p>{{$product->description}}</p>
                 <strong class="price">€{{$product->price}}</strong> </div>
             </div>
+            </a>
           </li>
           @endforeach
-          <li> <a href="#"><img src="{{ asset('images/big1.jpg') }}" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">€58.99</strong> </div>
-            </div>
-          </li>
-          <li class="last"> <a href="#"><img src="{{ asset('images/big1.jpg') }}" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">€58.99</strong> </div>
-            </div>
-          </li>
         </ul>
         <div class="cl">&nbsp;</div>
       </div>

@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    //
+    /**
+     * Get the products for each category.
+     */
+    public function products()
+    {
+        return $this->hasMany('App\Http\Models\Product');
+    }
 }
+
+
