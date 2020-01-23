@@ -19,20 +19,31 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Shows the product itself.
      *
+     * @param int $prod_id (product)
+     * @param int $cat_id (category)
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($cat_id, $prod_id)
     {
-    	$categories = Category::all();
-    	$products = Product::all();//niet meer ::all() maar where(category_id, $id)->get()
-        return view('products', ['categories' => $categories, 'products' => $products]);
+        $product = Product::find($prod_id);
+        if(!empty($product)){
+            if ($product->category_id == $cat_id) {
+                return view('product', compact('product'));
+            }
+        }
+        return redirect()->route('products');
     }
 
-    public function view($id)
+    /**
+     * Add a product to the cart.
+     *
+     * @param int $id (product)
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function add($id)
     {
-        $product = Product::find($id);
-        return view('product', compact('product'));
+        //add to cart
     }
 }

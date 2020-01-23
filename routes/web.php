@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/product', 'ProductController@index')->name('products');
-//{id} niet verplicht
+Route::get('/category/{id?}', 'CategoryController@index')->name('categories');
+//{id?} = niet verplicht parameter
 
-Route::get('/product/{id}', 'ProductController@view')->name('productview');
+Route::get('/category/{cat_id}/product/{prod_id}', 'ProductController@index')->name('productview');
+
+Route::get('/cart', 'CartController@index')->name('cart');

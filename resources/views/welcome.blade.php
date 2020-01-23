@@ -10,7 +10,7 @@
                 </div><br>
 
                 <h1>
-                    <a href="{{ route('products') }}">Start Shopping -></a>
+                    <a href="{{ route('categories') }}">Start Shopping -></a>
                 </h1><br>
 
                 <div class="links">
