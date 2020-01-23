@@ -33,10 +33,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <div id="cart"> <a href="{{ route ('cart')}}" class="cart-link">Your Shopping Cart</a>
-                            <div class="cl">&nbsp;</div>
-                            <span>Articles: <strong>0</strong></span> &nbsp;&nbsp; <span>Cost: <strong>€00.00</strong></span>
-                        </div>
+                        @guest
+                        @else
+                            <div id="cart"> <a href="{{ route ('cart')}}" class="cart-link">Your Shopping Cart</a>
+                                <div class="cl">&nbsp;</div>
+                                <span>Articles: <strong>0</strong></span> &nbsp;&nbsp; <span>Cost: <strong>€00.00</strong></span>
+                            </div>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
