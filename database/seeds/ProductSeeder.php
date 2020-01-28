@@ -78,7 +78,7 @@ class ProductSeeder extends Seeder
             'name' => "Nightmare Moon // Princess Luna",
             'set' => 'Ponies: The Galloping',
             'description' => 'Special - Mint Condition',
-            'image' => 'nightmare_moon',
+            'image' => 'nightmare_moon.jpg',
             'price' => 34.99,
             'category_id' => 3,
         ]);
@@ -114,7 +114,7 @@ class ProductSeeder extends Seeder
             'name' => "Princess Celestia *Gambit Planner*",
             'set' => 'The Crystal Games',
             'description' => 'Promo - Mint Condition',
-            'image' => 'princess_celestia',
+            'image' => 'princess_celestia.jpg',
             'price' => 4.99,
             'category_id' => 4,
         ]);
@@ -267,7 +267,7 @@ class ProductSeeder extends Seeder
             'name' => "The Pig",
             'set' => 'Finn vs. Jake',
             'description' => 'Common - Mint Condition',
-            'image' => 'the_pig',
+            'image' => 'the_pig.jpg',
             'price' => 24.99,
             'category_id' => 10,
         ]);

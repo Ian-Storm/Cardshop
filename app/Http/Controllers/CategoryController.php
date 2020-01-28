@@ -18,6 +18,6 @@ class CategoryController extends Controller
     {
     	$categories = Category::all();
     	$products = Product::where('category_id', $id)->get();
-        return view('products', ['categories' => $categories, 'products' => $products]);
+        return view('products', compact('categories', 'products'));
     }
 }

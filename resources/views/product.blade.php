@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+            <img src="{{ asset('storage/myimages/cards/' . $product->image) }}" alt="" />
                 <div class="product-info">
                     <h3>{{$product->name}}</h3>
                     <div class="product-desc">

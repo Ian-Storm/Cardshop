@@ -17,7 +17,7 @@
         <div class="cl">&nbsp;</div>
         <ul>
           @foreach($products as $product)
-          <li> <a href="{{route('productview', [$product->category_id, $product->id])}}"><img src="{{ asset('images/'. $product->image) }}" alt="" />
+          <li> <a href="{{route('productview', [$product->category_id, $product->id])}}"><img src="{{ asset('storage/myimages/cards/' . $product->image) }}" alt="" />
             <div class="product-info">
               <h3>{{$product->name}}</h3>
               <div class="product-desc">

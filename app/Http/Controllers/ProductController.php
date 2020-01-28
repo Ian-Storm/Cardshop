@@ -33,7 +33,7 @@ class ProductController extends Controller
                 return view('product', compact('product'));
             }
         }
-        return redirect()->route('products');
+        return redirect()->route('categories');
     }
 
     /**
