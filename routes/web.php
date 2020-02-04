@@ -25,3 +25,5 @@ Route::get('/category/{id?}', 'CategoryController@index')->name('categories');
 Route::get('/category/{cat_id}/product/{prod_id}', 'ProductController@index')->name('productview');
 
 Route::get('/cart', 'CartController@index')->name('cart');
+
+Route::get('/AddItem/category/{cat_id}/product/{prod_id}', 'CartController@addItem');

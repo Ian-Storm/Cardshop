@@ -21,8 +21,7 @@
             <div class="product-info">
               <h3>{{$product->name}}</h3>
               <div class="product-desc">
-                <h4>{{$product->set}}</h4>
-                <p>{{$product->description}}</p>
+                <p>{{$product->set}}</p>
                 <strong class="price">€{{$product->price}}</strong> </div>
             </div>
             </a>
