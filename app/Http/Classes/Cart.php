@@ -33,11 +33,33 @@ class Cart
     	$this->saveCart();
     }
 
+    public function removeProduct($product){
+
+    	if ($this->Cart != null) {
+    		for ($i=0; $i < count($this->Cart); $i++) { 
+    			$item = $this->Cart[$i];
+    			if ($item['product']['id'] == $product['id']) {
+    				$item['amount'] -= 1;
+    				if ($item['amount'] <= 0) {
+    					array_splice($this->Cart, $i, 1);
+    					break;
+    				}
+    				$this->Cart[$i] = $item;
+    			} 
+    		}
+    	}
+    	$this->saveCart();
+    }
+
     public function getProducts(){
-		dd($this->Cart);
+		return $this->Cart;
     }
 
     private function saveCart(){
     	Cookie::queue(Cookie::make('ActiveCart', json_encode($this->Cart), 1800));
+    }
+
+    public function deleteCart(){
+    	Cookie::queue(Cookie::make('ActiveCart', '', 1800));
     }
 }

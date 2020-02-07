@@ -246,7 +246,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
-            'name' => "Kinapping",
+            'name' => "Kidnapping",
             'set' => 'Beyblade Collision',
             'description' => 'Common - Mint Condition',
             'image' => 'kidnapping.jpg',

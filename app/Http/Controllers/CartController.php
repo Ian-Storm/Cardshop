@@ -26,8 +26,8 @@ class CartController extends Controller
     public function index()
     {
         $cart = new Cart();
-        $cart->getProducts();
-        return view('cart');
+        $products = $cart->getProducts();
+        return view('cart', compact('products'));
     }
 
     /**
@@ -44,9 +44,14 @@ class CartController extends Controller
                 $cart->addProduct($product);
             }
         }
-        return redirect('/category');
+        return redirect()->route('categories', ['id'=>$cat_id]);
     }
 
+    /**
+     * Changes the amount in the cart +1.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function addAmount($cat_id, $prod_id)
     {
         $product = Product::find($prod_id);
@@ -60,12 +65,19 @@ class CartController extends Controller
     }
 
     /**
-     * Deletes a product in the cart.
+     * Changes the amount in the cart -1 or delete the product.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function delete()
+    public function removeAmount($cat_id, $prod_id)
     {
-        
+        $product = Product::find($prod_id);
+        if(!empty($product)){
+            if ($product->category_id == $cat_id) {
+                $cart = new Cart();
+                $cart->removeProduct($product);
+            }
+        }
+        return redirect()->back();
     }
 }

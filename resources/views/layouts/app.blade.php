@@ -37,7 +37,7 @@
                         @else
                             <div id="cart"> <a href="{{ route ('cart')}}" class="cart-link">Your Shopping Cart</a>
                                 <div class="cl">&nbsp;</div>
-                                <span>Articles: <strong>0</strong></span> &nbsp;&nbsp; <span>Cost: <strong>€00.00</strong></span>
+                                <span>Articles: <strong>{{$productCount}}</strong></span> &nbsp;&nbsp; <span>Cost: <strong>€{{$price}}</strong></span>
                             </div>
                         @endguest
                     </ul>
@@ -86,7 +86,7 @@
 
         <!-- Footer -->
         <div id="footer">
-            <p class="left"> <a href="{{ route('categories')}}">Home</a> <span>|</span> <a href="#">My Account</a> <span>|</span> <a href="https://www.youtube.com/channel/UCTVyzYP9_fkc_KxrezbIF-A">Contact</a> <p class="right"> KVK 61258911 @Adrelian </p>
+            <p class="left"> <a href="{{ route('categories')}}">Main</a> <span>|</span> <a href="{{ route('home')}}">My Account</a> <span>|</span> <a href="https://www.youtube.com/channel/UCTVyzYP9_fkc_KxrezbIF-A">Contact</a> <p class="right"> KVK 61258911 @Adrelian </p>
         </div>
         <!-- End Footer -->
     </div>
