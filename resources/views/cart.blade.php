@@ -16,7 +16,7 @@
           </ul>
         	@endforeach
         </div>
-            <a href='#' class="btn btn-primary">Complete order</a>
+            <a href="/SaveOrder/category/{{$product['product']['category_id']}}/product/{{$product['product']['id']}}" class="btn btn-primary">Complete order</a>
     </div>
         @else
     		<h1>No products are in the shopping cart!<h1>

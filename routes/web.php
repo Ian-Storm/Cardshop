@@ -33,3 +33,5 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/AddAmount/category/{cat_id}/product/{prod_id}', 'CartController@addAmount');
 
 Route::get('/DeleteAmount/category/{cat_id}/product/{prod_id}', 'CartController@removeAmount');
+
+Route::get('/SaveOrder/category/{cat_id}/product/{prod_id}', 'CartController@saveOrder');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Models\Product;
 Use App\Http\Classes\Cart;
+use App\Http\Models\Order;
+use App\Http\Models\OrderDetail;
+use Auth;
 
 class CartController extends Controller
 {
@@ -79,5 +82,23 @@ class CartController extends Controller
             }
         }
         return redirect()->back();
+    }
+
+    /**
+     * Completes a order and sets it in the database.
+     *
+     * @return void
+     */
+    public function saveOrder()
+    {
+        $order = Order::createOrder(Auth::id());
+        $cart = new Cart();
+        $products = $cart->getProducts();
+        for ($i=0; $i < count($products); $i++) { 
+            $item = $products[$i];
+            OrderDetail::createDetails($order->id, json_encode($item));
+        }
+        $cart->deleteCart();   
+        return redirect()->route('home');
     }
 }
