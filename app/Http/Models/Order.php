@@ -9,6 +9,8 @@ class Order extends Model
 {
     /**
      * Makes the order each time you purchase.
+     *
+     * @return void
      */
     public static function createOrder($user_id)
     {

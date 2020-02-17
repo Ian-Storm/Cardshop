@@ -8,6 +8,8 @@ class Product extends Model
 {
     /**
      * Get the category for each product.
+     *
+     * @return void
      */
     public function category()
     {

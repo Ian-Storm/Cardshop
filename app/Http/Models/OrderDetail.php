@@ -9,6 +9,8 @@ class OrderDetail extends Model
 {
     /**
      * Sets the details of your order in the database.
+     *
+     * @return void
      */
     public static function createDetails($order_id, $orderString)
     {
