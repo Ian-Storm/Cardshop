@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Models\Order;
 use App\Http\Models\OrderDetail;
+use App\Http\Models\Product;
 use Auth;
 
 class HomeController extends Controller
@@ -26,18 +27,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('user_id', Auth::id())->get()->toArray(); //gets the orders of the logged in user
-        $orders = array_reverse($orders); //reverses the order of the orders
+        $orders = Order::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get()->toArray(); //gets the orders of the logged in user and sets it to newest first
+        //"SELECT * FROM Orders WHERE user_id = 1 ORDER BY created_at DESC";
 
         for ($i=0; $i < count($orders); $i++) { 
             $orders[$i]['products'] = []; //makes an empty array in the order
             $orders[$i]['totalPrice'] = 0; //makes an float in the order
             $items = OrderDetail::where('order_id', $orders[$i]['id'])->get()->toArray(); //gets all the product from the specific order
             for ($p=0; $p < count($items); $p++) { 
-                $item = json_decode($items[$p]['orderString'], true); //makes an object from the json string
-                $item['product']['amount'] = $item['amount']; //stores amount in the product
-                $orders[$i]['totalPrice'] += (float)$item['product']['price'] * (float)$item['amount']; //makes total price by doing price x amount for each order
-                array_push($orders[$i]['products'], $item['product']); //adds a product to a products list of an order
+                $item = Product::where('id', $items[$p]['id'])->first()->toArray(); //gets the product from the database with the first matching id
+                $item['amount'] = $items[$p]['amount']; //stores amount in the product
+                $orders[$i]['totalPrice'] += $items[$p]['price']; //gets the total price
+                array_push($orders[$i]['products'], $item); //adds a product to a products list of an order
             }
         }
         return view('home', compact('orders'));

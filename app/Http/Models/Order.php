@@ -14,9 +14,9 @@ class Order extends Model
      */
     public static function createOrder($user_id)
     {
-    	$orders = new Order;
-    	$orders->user_id = $user_id;
-    	$orders->save();
-    	return $orders;
+    	$order = new Order;
+    	$order->user_id = $user_id;
+    	$order->save();
+    	return $order;
     }
 }

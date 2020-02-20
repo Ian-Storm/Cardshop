@@ -96,7 +96,7 @@ class CartController extends Controller
         $products = $cart->getProducts();
         for ($i=0; $i < count($products); $i++) { 
             $item = $products[$i];
-            OrderDetail::createDetails($order->id, json_encode($item));
+            OrderDetail::createDetails($order->id, $item['product']['id'], $item['amount'], $item['product']['price'] * $item['amount']);
         }
         $cart->deleteCart();   
         return redirect()->route('home');

@@ -12,11 +12,13 @@ class OrderDetail extends Model
      *
      * @return void
      */
-    public static function createDetails($order_id, $orderString)
+    public static function createDetails($order_id, $product_id, $amount, $price)
     {
     	$orderDetail = new OrderDetail;
     	$orderDetail->order_id = $order_id;
-    	$orderDetail->orderString = $orderString;
+    	$orderDetail->product_id = $product_id;
+        $orderDetail->amount = $amount;
+        $orderDetail->price = $price;
     	return $orderDetail->save();
     }
 }
