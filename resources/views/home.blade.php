@@ -12,39 +12,23 @@
                             {{ session('status') }}
                         </div>
                     @else
-                        @foreach($orders as $order)
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Id Order {{ $order['id'] }}
-                                        <span style="float:right;">
-                                        Total: &euro;{{ $order['totalPrice'] }},-
-                                        </span>
-                                    </div>
-                                    @foreach($order['products'] as $data)
-                                    <div class="card-body">
-                                        <p class="description">
-                                            {{ $data['name'] }}
-                                        </p>
-                                        <p class="description">
-                                            {{ $data['set'] }}
-                                        </p>
-                                        <p class="description">
-                                            {{ $data['description'] }}
-                                        </p>
-                                        <p class="description">
-                                            Amount: {{ $data['amount'] }}
-                                        </p>
-                                    </div>
-                                @endforeach
-                                </div>
-                            </div>
-                        @endforeach
                     @endif
-                    
-                    @if (count($orders) <= 0)
-                    You have no orders yet!
-                    @endif
+
+                    @foreach($orders as $order)
+                        Order: {{$order->id}}</br>
+                        Ordered at: {{$order->created_at}}</br>
+                        Total price: &euro;{{$order->total}}</br></br>
+                        <ul>
+                            @foreach($order->orderDetails as $orderDetail)
+                                <span>Product name: {{$orderDetail->product->name}}</br></span>
+                                <span>Product price: &euro;{{$orderDetail->product->price}}</br></span>
+                                <span>Product amount: {{$orderDetail->amount}}</br></span></br>
+                            @endforeach
+                            <hr>
+                        </ul>
+                    @endforeach
+
+
                 </div>
             </div>
         </div>

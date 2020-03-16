@@ -37,7 +37,7 @@
                         @else
                             <div id="cart"> <a href="{{ route ('cart')}}" class="cart-link">Your Shopping Cart</a>
                                 <div class="cl">&nbsp;</div>
-                                <span>Articles: <strong>{{$productCount}}</strong></span> &nbsp;&nbsp; <span>Cost: <strong>€{{$price}}</strong></span>
+                                <span>Articles: <strong>{{$productCount}}</strong></span> &nbsp;&nbsp; <span>Cost: &euro;<strong>{{$price}}</strong></span>
                             </div>
                         @endguest
                     </ul>

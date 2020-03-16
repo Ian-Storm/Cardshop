@@ -4,6 +4,7 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Models\OrderDetail;
+use App\Http\Models\Product;
 
 class OrderDetail extends Model
 {
@@ -21,4 +22,15 @@ class OrderDetail extends Model
         $orderDetail->price = $price;
     	return $orderDetail->save();
     }
+
+    /**
+     * Get the product linked to this orderDetail.
+     *
+     * @return void
+     */
+    public function product()
+    {
+        return $this->hasOne('App\Http\Models\Product', 'id', 'product_id');
+    }
+
 }
