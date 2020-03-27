@@ -29,9 +29,9 @@ class HomeController extends Controller
     {
         $orders = Order::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
 
-        foreach ($orders as $key => $order) {
-            $orders[$key]['total'] = $order->getTotalOrderPrice();
-        }
+        // foreach ($orders as $key => $order) {
+        //     $orders[$key]['total'] = $order->getTotalOrderPrice();
+        // }
 
         //foreach ($array as $value) {}
         //foreach ($array as $key => $value) {}

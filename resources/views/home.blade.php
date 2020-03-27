@@ -17,7 +17,7 @@
                     @foreach($orders as $order)
                         Order: {{$order->id}}</br>
                         Ordered at: {{$order->created_at}}</br>
-                        Total price: &euro;{{$order->total}}</br></br>
+                        Total price: &euro;{{$order->getTotalOrderPrice()}}</br></br>
                         <ul>
                             @foreach($order->orderDetails as $orderDetail)
                                 <span>Product name: {{$orderDetail->product->name}}</br></span>
